@@ -8,12 +8,12 @@
 Summary:	Storable - persistency for Perl data structures
 Summary(pl):	Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
-Version:	2.06
-Release:	2
+Version:	2.07
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
-# Source0-md5: 28251cdd6aa2e39f1e36c02472ca5e34
+# Source0-md5:	04d1b52cf304343e1be08df6f4ad345e
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 4.1-13
