@@ -1,54 +1,65 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	Storable perl module
-Summary(pl):	Modu³ perla Storable
+%define		pdir	Storable
+%define		pnam	Storable
+Summary:	Storable Perl module
+Summary(cs):	Modul Storable pro Perl
+Summary(da):	Perlmodul Storable
+Summary(de):	Storable Perl Modul
+Summary(es):	Módulo de Perl Storable
+Summary(fr):	Module Perl Storable
+Summary(it):	Modulo di Perl Storable
+Summary(ja):	Storable Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	Storable ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul Storable
+Summary(pl):	Modu³ Perla Storable
+Summary(pt):	Módulo de Perl Storable
+Summary(pt_BR):	Módulo Perl Storable
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Storable
+Summary(sv):	Storable Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Storable
+Summary(zh_CN):	Storable Perl Ä£¿é
 Name:		perl-Storable
-Version:	1.0.7
+Version:	2.04
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
-Group(pl):	Programowanie/Jêzyki/Perl
-Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Storable/Storable-%{version}.tar.gz
-Patch0:		%{name}-man.patch
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
+BuildRequires:	perl-Test-Simple >= 0.41
+BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
-BuildRequires:	perl
-%requires_eq	perl
-Requires:	%{perl_sitearch}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Storable - persistency for perl data structures.
+Storable - persistency for Perl data structures.
 
 %description -l pl
-Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych perla.
+Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych Perla.
 
 %prep
-%setup -q -n Storable-%{version}
-%patch0 -p1
+%setup -q -n %{pnam}-%{version}
 
 %build
 perl Makefile.PL
-%{__make} OPTIMIZE="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+%{__make} OPTIMIZE="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf ChangeLog README
+pod2man --section=3pm Storable.pm $RPM_BUILD_ROOT%{_mandir}/man3/Storable.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {ChangeLog,README}.gz
-
-%{perl_sitearch}/Storable.pm
-
-%dir %{perl_sitearch}/auto/Storable
-%{perl_sitearch}/auto/Storable/*.al
-%{perl_sitearch}/auto/Storable/autosplit.ix
-%{perl_sitearch}/auto/Storable/Storable.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Storable/Storable.so
-
+%doc ChangeLog README
+%{perl_archlib}/Storable.pm
+%dir %{perl_archlib}/auto/Storable
+%{perl_archlib}/auto/Storable/autosplit.ix
+%{perl_archlib}/auto/Storable/*.al
+%{perl_archlib}/auto/Storable/*.bs
+%attr(755,root,root) %{perl_archlib}/auto/Storable/*.so
 %{_mandir}/man3/*
