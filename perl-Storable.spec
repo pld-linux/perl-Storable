@@ -3,34 +3,19 @@
 # _without_tests - do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Storable
-%define		pnam	Storable
-Summary:	Storable Perl module
-Summary(cs):	Modul Storable pro Perl
-Summary(da):	Perlmodul Storable
-Summary(de):	Storable Perl Modul
-Summary(es):	Módulo de Perl Storable
-Summary(fr):	Module Perl Storable
-Summary(it):	Modulo di Perl Storable
-Summary(ja):	Storable Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Storable ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Storable
-Summary(pl):	Modu³ Perla Storable
-Summary(pt):	Módulo de Perl Storable
-Summary(pt_BR):	Módulo Perl Storable
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Storable
-Summary(sv):	Storable Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Storable
-Summary(zh_CN):	Storable Perl Ä£¿é
+%define	pdir	Storable
+%define	pnam	Storable
+Summary:	Storable - persistency for Perl data structures
+Summary(pl):	Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
 Version:	2.06
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 5.6.1
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,7 +28,8 @@ Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych Perla.
 %setup -q -n %{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
@@ -62,10 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README
-%{perl_archlib}/Storable.pm
-%dir %{perl_archlib}/auto/Storable
-%{perl_archlib}/auto/Storable/autosplit.ix
-%{perl_archlib}/auto/Storable/*.al
-%{perl_archlib}/auto/Storable/*.bs
-%attr(755,root,root) %{perl_archlib}/auto/Storable/*.so
+%{perl_vendorarch}/Storable.pm
+%dir %{perl_vendorarch}/auto/Storable
+%{perl_vendorarch}/auto/Storable/autosplit.ix
+%{perl_vendorarch}/auto/Storable/*.al
+%{perl_vendorarch}/auto/Storable/*.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Storable/*.so
 %{_mandir}/man3/*
