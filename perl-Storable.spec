@@ -43,7 +43,7 @@ Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych Perla.
 %setup -q -n %{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
