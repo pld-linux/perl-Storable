@@ -10,7 +10,8 @@ Summary(pl):	Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
 Version:	2.12
 Release:	1
-License:	GPL
+# same as perl 5
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
 # Source0-md5:	1c71b6a8a497af81c84627641a57b1cf
