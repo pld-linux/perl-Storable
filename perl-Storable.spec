@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Storable
-%define	pnam	Storable
+%define		pdir	Storable
+%define		pnam	Storable
 Summary:	Storable - persistency for Perl data structures
 Summary(pl):	Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
