@@ -2,7 +2,7 @@
 Summary:	Storable perl module
 Summary(pl):	Modu³ perla Storable
 Name:		perl-Storable
-Version:	0.7.4
+Version:	1.0.6
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
