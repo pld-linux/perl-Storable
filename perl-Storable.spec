@@ -23,7 +23,7 @@ Summary(sv):	Storable Perlmodul
 Summary(uk):	Модуль для Perl Storable
 Summary(zh_CN):	Storable Perl дё©И
 Name:		perl-Storable
-Version:	2.05
+Version:	2.06
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
