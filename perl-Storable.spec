@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Storable
 %define		pnam	Storable
@@ -19,7 +23,7 @@ Summary(sv):	Storable Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Storable
 Summary(zh_CN):	Storable Perl Ä£¿é
 Name:		perl-Storable
-Version:	2.04
+Version:	2.05
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -41,6 +45,8 @@ Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych Perla.
 %build
 perl Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
