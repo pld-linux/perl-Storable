@@ -19,11 +19,12 @@ Summary(sv):	Storable Perlmodul
 Summary(uk):	Модуль для Perl Storable
 Summary(zh_CN):	Storable Perl дё©И
 Name:		perl-Storable
-Version:	2.03
-Release:	2
+Version:	2.04
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pnam}-%{version}.tar.gz
+BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 5.6.1
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,8 +44,11 @@ perl Makefile.PL
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+pod2man --section=3pm Storable.pm $RPM_BUILD_ROOT%{_mandir}/man3/Storable.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,4 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %{perl_archlib}/Storable.pm
-%{perl_archlib}/auto/Storable
+%dir %{perl_archlib}/auto/Storable
+%{perl_archlib}/auto/Storable/autosplit.ix
+%{perl_archlib}/auto/Storable/*.al
+%{perl_archlib}/auto/Storable/*.bs
+%attr(755,root,root) %{perl_archlib}/auto/Storable/*.so
+%{_mandir}/man3/*
