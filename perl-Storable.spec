@@ -7,7 +7,7 @@ Release:	3
 Copyright:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module//Storable-%{version}.tar.gz
+Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Storable/Storable-%{version}.tar.gz
 BuildRequires:	rpm-perlprov
 BuildRequires:	perl >= 5.005_03-13
 %requires_eq	perl
