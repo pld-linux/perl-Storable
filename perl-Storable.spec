@@ -30,7 +30,7 @@ Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych Perla.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
