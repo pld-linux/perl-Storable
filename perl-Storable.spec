@@ -8,6 +8,7 @@ License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Storable/Storable-%{version}.tar.gz
+Patch0: %{name}-man.patch
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
@@ -22,6 +23,7 @@ Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych perla.
 
 %prep
 %setup -q -n Storable-%{version}
+%patch0 -p1
 
 %build
 perl Makefile.PL
