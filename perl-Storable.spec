@@ -2,12 +2,12 @@
 Summary:	Storable perl module
 Summary(pl):	Modu³ perla Storable
 Name:		perl-Storable
-Version:	0.6.7
-Release:	3
-Copyright:	GPL
+Version:	0.6.9
+Release:	1
+License:	GPL
 Group:		Development/Languages/Perl
 Group(pl):	Programowanie/Jêzyki/Perl
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/Storable/Storable-%{version}.tar.gz
+Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/Storable/Storable-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
@@ -15,7 +15,7 @@ Requires:	%{perl_sitearch}
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
-Storable - persistency for perl data structures. 
+Storable - persistency for perl data structures.
 
 %description -l pl
 Storable - modu³ umo¿liwiaj±cy przechowywanie struktur danych perla.
