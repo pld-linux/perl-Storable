@@ -6,7 +6,7 @@
 %define		pdir	Storable
 %define		pnam	Storable
 Summary:	Storable - persistency for Perl data structures
-Summary(pl):	Storable - przechowywanie struktur danych Perla
+Summary(pl.UTF-8):   Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
 # 2.13 in perl-modules 5.8.7
 Version:	2.15
@@ -27,8 +27,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Storable - persistency for Perl data structures.
 
-%description -l pl
-Storable - modu≥ umoøliwiaj±cy przechowywanie struktur danych Perla.
+%description -l pl.UTF-8
+Storable - modu≈Ç umo≈ºliwiajƒÖcy przechowywanie struktur danych Perla.
 
 %prep
 %setup -q -n %{pnam}-%{version}
