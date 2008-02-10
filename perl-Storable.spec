@@ -10,7 +10,7 @@ Summary(pl.UTF-8):	Storable - przechowywanie struktur danych Perla
 Name:		perl-Storable
 # 2.13 in perl-modules 5.8.7
 Version:	2.16
-Release:	1
+Release:	2
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
