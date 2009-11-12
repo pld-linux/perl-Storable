@@ -51,7 +51,6 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-pod2man --section=3pm Storable.pm $RPM_BUILD_ROOT%{_mandir}/man3/Storable.3pm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
