@@ -12,7 +12,7 @@ Name:		perl-Storable
 # 2.15 in perl-modules 5.8.8
 # 2.18 in perl-modules 5.10.0
 Version:	2.21
-Release:	2
+Release:	3
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
