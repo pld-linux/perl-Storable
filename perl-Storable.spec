@@ -11,13 +11,14 @@ Name:		perl-Storable
 # 2.13 in perl-modules 5.8.7
 # 2.15 in perl-modules 5.8.8
 # 2.18 in perl-modules 5.10.0
-Version:	2.21
-Release:	4
+# 2.22 in perl-modules 5.12.0
+Version:	2.25
+Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Storable/%{pnam}-%{version}.tar.gz
-# Source0-md5:	9256904c73d8fe393b90b9b5f219f0a6
+Source0:	http://www.cpan.org/modules/by-module/Storable/AMS/%{pnam}-%{version}.tar.gz
+# Source0-md5:	2aca812fd3d88791a1dc0ed497afb8c6
 URL:		http://search.cpan.org/dist/Storable/
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -47,7 +48,6 @@ Storable - moduł umożliwiający przechowywanie struktur danych Perla.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}/man3
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -62,6 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/auto/Storable
 %{perl_vendorarch}/auto/Storable/autosplit.ix
 %{perl_vendorarch}/auto/Storable/*.al
-%{perl_vendorarch}/auto/Storable/*.bs
-%attr(755,root,root) %{perl_vendorarch}/auto/Storable/*.so
-%{_mandir}/man3/*
+%{perl_vendorarch}/auto/Storable/Storable.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Storable/Storable.so
+%{_mandir}/man3/Storable.3pm*
