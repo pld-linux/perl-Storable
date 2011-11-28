@@ -12,13 +12,13 @@ Name:		perl-Storable
 # 2.15 in perl-modules 5.8.8
 # 2.18 in perl-modules 5.10.0
 # 2.22 in perl-modules 5.12.0
-Version:	2.25
+Version:	2.30
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Storable/AMS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	2aca812fd3d88791a1dc0ed497afb8c6
+# Source0-md5:	3fb1587d89d1238d4b26f09d3864b9a1
 URL:		http://search.cpan.org/dist/Storable/
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -60,8 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{perl_vendorarch}/Storable.pm
 %dir %{perl_vendorarch}/auto/Storable
-%{perl_vendorarch}/auto/Storable/autosplit.ix
-%{perl_vendorarch}/auto/Storable/*.al
 %{perl_vendorarch}/auto/Storable/Storable.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Storable/Storable.so
 %{_mandir}/man3/Storable.3pm*
