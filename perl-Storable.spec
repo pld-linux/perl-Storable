@@ -12,20 +12,21 @@ Name:		perl-Storable
 # 2.15 in perl-modules 5.8.8
 # 2.18 in perl-modules 5.10.0
 # 2.22 in perl-modules 5.12.0
-Version:	2.30
-Release:	2
+# 2.41 in perl-modules 5.18.0
+Version:	2.39
+Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/Storable/AMS/%{pnam}-%{version}.tar.gz
-# Source0-md5:	3fb1587d89d1238d4b26f09d3864b9a1
+Source0:	http://www.cpan.org/modules/by-module/Storable/%{pnam}-%{version}.tar.gz
+# Source0-md5:	0a9b63a6715b11d234d802c63b0c76e6
 URL:		http://search.cpan.org/dist/Storable/
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-# remove the line below if you *really* have newer version than one
-# available in perl-modules
-#BuildRequires:	this-must-be-newer-version-than-in-perl-modules
+%if "%{version}" <= "%(rpm -q --provides perl-modules | grep ^perl-Storable | awk '{ print $3 }')"
+BuildRequires:	this-must-be-newer-version-than-in-perl-modules
+%endif
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
