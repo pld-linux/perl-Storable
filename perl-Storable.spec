@@ -13,13 +13,13 @@ Name:		perl-Storable
 # 2.18 in perl-modules 5.10.0
 # 2.22 in perl-modules 5.12.0
 # 2.41 in perl-modules 5.18.0
-Version:	2.39
+Version:	2.45
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Storable/%{pnam}-%{version}.tar.gz
-# Source0-md5:	0a9b63a6715b11d234d802c63b0c76e6
+# Source0-md5:	682dbbddf86bb30e455b24f569308195
 URL:		http://search.cpan.org/dist/Storable/
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 1:5.8.0
