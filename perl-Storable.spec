@@ -61,6 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog README
 %{perl_vendorarch}/Storable.pm
 %dir %{perl_vendorarch}/auto/Storable
-%{perl_vendorarch}/auto/Storable/Storable.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Storable/Storable.so
 %{_mandir}/man3/Storable.3pm*
