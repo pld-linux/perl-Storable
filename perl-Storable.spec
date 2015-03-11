@@ -13,6 +13,7 @@ Name:		perl-Storable
 # 2.18 in perl-modules 5.10.0
 # 2.22 in perl-modules 5.12.0
 # 2.41 in perl-modules 5.18.0
+# 2.49 in perl-modules 5.20.1
 Version:	2.51
 Release:	1
 # same as perl 5
