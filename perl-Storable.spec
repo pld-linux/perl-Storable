@@ -14,13 +14,13 @@ Name:		perl-Storable
 # 2.22 in perl-modules 5.12.0
 # 2.41 in perl-modules 5.18.0
 # 2.49 in perl-modules 5.20.1
-Version:	2.51
+Version:	3.11
 Release:	1
 # same as perl 5
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Storable/%{pnam}-%{version}.tar.gz
-# Source0-md5:	48082965a6403a8c5adcd42aeb0c58e5
+# Source0-md5:	0d1a4dc1450946aa32544f95f9b40657
 URL:		http://search.cpan.org/dist/Storable/
 BuildRequires:	perl-Test-Simple >= 0.41
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -61,6 +61,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc ChangeLog README
 %{perl_vendorarch}/Storable.pm
+%dir %{perl_vendorarch}/Storable
+%{perl_vendorarch}/Storable/Limit.pm
 %dir %{perl_vendorarch}/auto/Storable
 %attr(755,root,root) %{perl_vendorarch}/auto/Storable/Storable.so
-%{_mandir}/man3/Storable.3pm*
+%{_mandir}/man3/Storable*.3pm*
